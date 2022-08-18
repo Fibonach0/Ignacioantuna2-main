@@ -1,0 +1,135 @@
+           * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Rubik", sans-serif;
+    }
+    
+    body {
+        height: 100%;
+        background: black;
+        background-image: url("BackGround.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    
+    .container {
+        background-color: transparent;
+        width: 400px;
+        padding: 35px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        box-shadow: 15px 30px 35px rgba(0, 0, 0, 0);
+        /* box-shadow: 15px 30px 35px rgba(0, 0, 0, 0.1); in case wanna have a little shadow*/
+        border-radius: 10px;
+        -webkit-perspective: 300px;
+        perspective: 300px;
+    }
+    
+    .stats {
+        display: flex;
+        color: #101020;
+        background-color: transparent;
+        font-weight: 500;
+        padding: 20px;
+        margin-bottom: 40px;
+        margin-top: 55px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+        /*box-shadow: 0 0 20px rgba(0, 139, 253, 0.25); inm case wanna have a nice shadow*/
+    }
+    
+    .stats p:nth-last-child(1) {
+        margin-left: 50%;
+    }
+    
+    .coin {
+        height: 150px;
+        width: 150px;
+        position: relative;
+        margin: 32px auto;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    
+    .coin img {
+        width: 145px;
+        line-height: 50px;
+        border-radius: 50%;
+        box-sizing: content-box;
+    }
+    
+    .heads,
+    .tails {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .tails {
+        transform: rotateX(180deg);
+    }
+    
+    @keyframes spin-tails {
+        0% {
+            transform: rotateX(0);
+        }
+        100% {
+            transform: rotateX(1980deg);
+        }
+    }
+    
+    @keyframes spin-heads {
+        0% {
+            transform: rotateX(0);
+        }
+        100% {
+            transform: rotateX(2160deg);
+        }
+    }
+    
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    button {
+        width: 150px;
+        padding: 15px 0;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #flip-button {
+        background-color: #074388;
+        color: #ffffff;
+    }
+    
+    #flip-button:disabled {
+        background-color: #e1e0ee;
+        border-color: #e1e0ee;
+        color: #101020;
+    }
+    
+    #reset-button {
+        background-color: #673206;
+        color: white;
+    }
+    
+    @media (min-width:500px) and (max-width:768px) {
+        body {
+            height: 100%;
+            background-image: url("SBackGround.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    }
