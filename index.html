@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="htmlRoot">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ignacio Antuña — IT Manager</title>
-<meta name="description" content="Ignacio Antuña, IT Manager en JPMorgan Chase. Liderazgo de equipos de soporte, ITSM, infraestructura Mac/Windows/Linux, Buenos Aires, Argentina.">
+<meta name="description" content="Ignacio Antuña, IT Manager at JPMorgan Chase. Team leadership, ITSM, Mac/Windows/Linux infrastructure. Buenos Aires, Argentina.">
 <meta name="keywords" content="Ignacio Antuña, IT Manager, ITSM, Mac SME, soporte técnico, Buenos Aires">
 
 <meta property="og:title" content="Ignacio Antuña — IT Manager">
-<meta property="og:description" content="IT Manager en JPMorgan Chase. Liderazgo de equipos de soporte, ITSM e infraestructura. Buenos Aires, Argentina.">
+<meta property="og:description" content="IT Manager at JPMorgan Chase. Team leadership, ITSM, infrastructure. Buenos Aires, Argentina.">
 <meta property="og:image" content="assets/img/profile-img.jpg">
 <meta property="og:url" content="https://ignacio.antuña.com.ar/">
 <meta property="og:type" content="website">
@@ -24,91 +24,48 @@
 
 <style>
   :root{
-    --ink:#11151c;
-    --panel:#181d27;
-    --panel-2:#1f2530;
-    --line:#2b323f;
-    --paper:#e8eaed;
-    --muted:#8b93a1;
-    --green:#3dd68c;
-    --amber:#f2a93b;
-    --red:#f2545b;
-    --radius:14px;
+    --ink:#11151c; --panel:#181d27; --panel-2:#1f2530; --line:#2b323f;
+    --paper:#e8eaed; --muted:#8b93a1; --green:#3dd68c; --amber:#f2a93b; --red:#f2545b;
     --maxw:880px;
     --display: 'Space Grotesk', sans-serif;
     --body: 'IBM Plex Sans', sans-serif;
     --mono: 'IBM Plex Mono', monospace;
   }
-
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--ink);
-    color:var(--paper);
-    font-family:var(--body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{margin:0; background:var(--ink); color:var(--paper); font-family:var(--body); line-height:1.6; -webkit-font-smoothing:antialiased;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
-
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
 
-  /* ---------- topbar ---------- */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    background:rgba(17,21,28,.85);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  .topbar .wrap{display:flex; align-items:center; justify-content:space-between; height:56px;}
-  .topbar .brand{font-family:var(--mono); font-size:14px; color:var(--muted); display:flex; gap:8px; align-items:center;}
-  .topbar .dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px rgba(61,214,140,.15);}
-  .topbar nav{display:flex; gap:22px; font-family:var(--mono); font-size:13px;}
+  .topbar{position:sticky; top:0; z-index:50; background:rgba(17,21,28,.85); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .topbar .wrap{display:flex; align-items:center; justify-content:space-between; height:56px; gap:12px;}
+  .topbar .brand{font-family:var(--mono); font-size:13px; color:var(--muted); display:flex; gap:8px; align-items:center; min-width:0; overflow:hidden; white-space:nowrap;}
+  .topbar .dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px rgba(61,214,140,.15); flex:none;}
+  .topbar nav{display:flex; gap:18px; font-family:var(--mono); font-size:13px; flex:none;}
   .topbar nav a{text-decoration:none; color:var(--muted); transition:color .15s;}
   .topbar nav a:hover, .topbar nav a:focus-visible{color:var(--paper);}
+  .langtoggle{display:flex; border:1px solid var(--line); border-radius:7px; overflow:hidden; flex:none; font-family:var(--mono); font-size:11.5px;}
+  .langtoggle button{background:transparent; border:none; color:var(--muted); padding:5px 9px; cursor:pointer;}
+  .langtoggle button.active{background:var(--green); color:var(--ink); font-weight:600;}
+  .langtoggle button:focus-visible{outline:2px solid var(--green); outline-offset:1px;}
 
-  /* ---------- window chrome (signature element) ---------- */
-  .winhead{
-    display:flex; align-items:center; gap:10px;
-    padding:10px 16px;
-    background:var(--panel-2);
-    border:1px solid var(--line);
-    border-bottom:none;
-    border-radius:12px 12px 0 0;
-    font-family:var(--mono); font-size:12px; color:var(--muted);
-  }
+  .winhead{display:flex; align-items:center; gap:10px; padding:10px 16px; background:var(--panel-2); border:1px solid var(--line); border-bottom:none; border-radius:12px 12px 0 0; font-family:var(--mono); font-size:12px; color:var(--muted);}
   .traffic{display:flex; gap:7px; margin-right:4px;}
   .traffic span{width:11px; height:11px; border-radius:50%; display:inline-block;}
-  .traffic .r{background:var(--red);}
-  .traffic .a{background:var(--amber);}
-  .traffic .g{background:var(--green);}
-  .window{
-    border:1px solid var(--line);
-    border-radius:0 0 12px 12px;
-    background:var(--panel);
-    padding:28px;
-    margin-bottom:56px;
-  }
+  .traffic .r{background:var(--red);} .traffic .a{background:var(--amber);} .traffic .g{background:var(--green);}
+  .window{border:1px solid var(--line); border-radius:0 0 12px 12px; background:var(--panel); padding:28px; margin-bottom:56px;}
   @media (max-width:600px){ .window{padding:20px;} }
 
   .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1; transform:none; transition:none;}
-    html{scroll-behavior:auto;}
-  }
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
 
   h1,h2,h3,h4{font-family:var(--display); margin:0 0 .4em; letter-spacing:-0.01em;}
-  .eyebrow{
-    font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
-    color:var(--green); margin-bottom:10px; display:block;
-  }
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin-bottom:10px; display:block;}
   p{margin:0 0 1em; color:var(--paper);}
   .muted{color:var(--muted);}
 
-  /* ---------- hero ---------- */
   .hero{padding:64px 0 0;}
   .hero .window{padding:0; overflow:hidden;}
   .hero-body{padding:36px;}
@@ -117,33 +74,18 @@
   .avatar{width:76px; height:76px; border-radius:50%; object-fit:cover; border:2px solid var(--line);}
   .hero h1{font-size:clamp(28px,5vw,42px); color:var(--paper);}
   .hero .role{font-family:var(--mono); color:var(--green); font-size:15px;}
-  .terminal{
-    font-family:var(--mono); font-size:14px; color:#c7cbd1;
-    background:#0d1016; border:1px solid var(--line); border-radius:10px;
-    padding:18px 20px; margin-top:18px;
-  }
+  .terminal{font-family:var(--mono); font-size:14px; color:#c7cbd1; background:#0d1016; border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-top:18px;}
   .terminal .ln{margin-bottom:6px;}
   .terminal .prompt{color:var(--green);}
-  .terminal .out{color:var(--paper);}
   .caret{display:inline-block; width:8px; height:1em; background:var(--amber); vertical-align:-2px; animation:blink 1s steps(1) infinite;}
   @media (prefers-reduced-motion: reduce){ .caret{animation:none;} }
   @keyframes blink{50%{opacity:0;}}
 
   .social-row{display:flex; gap:14px; margin-top:20px; flex-wrap:wrap;}
-  .social-row a{
-    display:flex; align-items:center; gap:7px;
-    font-family:var(--mono); font-size:12.5px; color:var(--muted);
-    border:1px solid var(--line); border-radius:8px; padding:7px 11px;
-    text-decoration:none; transition:border-color .15s, color .15s;
-  }
+  .social-row a{display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:12.5px; color:var(--muted); border:1px solid var(--line); border-radius:8px; padding:7px 11px; text-decoration:none; transition:border-color .15s, color .15s;}
   .social-row a:hover, .social-row a:focus-visible{border-color:var(--green); color:var(--paper);}
-  .social-row svg{width:14px; height:14px; fill:currentColor;}
 
-  /* ---------- section heads ---------- */
   .sec{margin-top:40px;}
-  .sec h2{font-size:22px; color:var(--paper);}
-
-  /* ---------- about ---------- */
   .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
   @media (max-width:680px){ .about-grid{grid-template-columns:1fr;} }
   .meta-list{list-style:none; padding:0; margin:0; font-family:var(--mono); font-size:13.5px;}
@@ -152,16 +94,11 @@
   .meta-list .k{color:var(--muted); min-width:108px;}
   .meta-list .v{color:var(--paper);}
 
-  /* ---------- skills ---------- */
   .skill-groups{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   @media (max-width:680px){ .skill-groups{grid-template-columns:1fr;} }
   .skill-group h3{font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; font-weight:500;}
   .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
-  .tag{
-    font-family:var(--mono); font-size:12.5px; color:var(--paper);
-    background:var(--panel-2); border:1px solid var(--line); border-radius:7px;
-    padding:6px 10px; display:inline-flex; align-items:center; gap:6px;
-  }
+  .tag{font-family:var(--mono); font-size:12.5px; color:var(--paper); background:var(--panel-2); border:1px solid var(--line); border-radius:7px; padding:6px 10px; display:inline-flex; align-items:center; gap:6px;}
   .tag::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--green);}
   .lang-list{list-style:none; margin:0; padding:0;}
   .lang-list li{display:flex; justify-content:space-between; align-items:center; padding:7px 0; font-size:14px;}
@@ -169,58 +106,36 @@
   .pip{width:9px; height:9px; border-radius:2px; background:var(--line);}
   .pip.on{background:var(--amber);}
 
-  /* ---------- experience / changelog ---------- */
   .log{border-left:2px solid var(--line); margin-left:6px; padding-left:24px;}
   .log-item{position:relative; padding-bottom:26px;}
   .log-item:last-child{padding-bottom:0;}
-  .log-item::before{
-    content:""; position:absolute; left:-29px; top:4px;
-    width:11px; height:11px; border-radius:50%; background:var(--ink); border:2px solid var(--green);
-  }
+  .log-item::before{content:""; position:absolute; left:-29px; top:4px; width:11px; height:11px; border-radius:50%; background:var(--ink); border:2px solid var(--green);}
   .log-item.past::before{border-color:var(--muted);}
   .log-date{font-family:var(--mono); font-size:12px; color:var(--muted);}
   .log-role{font-size:17px; font-weight:600; margin:2px 0 1px; color:var(--paper); font-family:var(--display);}
   .log-co{font-family:var(--mono); font-size:13px; color:var(--green); margin-bottom:8px; display:block;}
   .log-item ul{margin:0; padding-left:18px; color:var(--paper);}
   .log-item li{margin-bottom:4px; font-size:14.5px;}
-  .badge-current{
-    font-family:var(--mono); font-size:10.5px; color:var(--ink); background:var(--green);
-    border-radius:5px; padding:2px 7px; margin-left:8px; vertical-align:2px; letter-spacing:.04em;
-  }
+  .badge-current{font-family:var(--mono); font-size:10.5px; color:var(--ink); background:var(--green); border-radius:5px; padding:2px 7px; margin-left:8px; vertical-align:2px; letter-spacing:.04em;}
   .edu-note{margin-top:22px; padding-top:18px; border-top:1px dashed var(--line);}
-  .edu-note .log-date{display:block; margin-bottom:2px;}
 
-  /* ---------- testimonials ---------- */
   .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   @media (max-width:680px){ .quote-grid{grid-template-columns:1fr;} }
-  .quote{
-    background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:16px 18px;
-    font-size:14px;
-  }
+  .quote{background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:16px 18px; font-size:14px;}
   .quote p{margin-bottom:10px; color:var(--paper);}
   .quote .who{font-family:var(--mono); font-size:12px; color:var(--muted);}
   .quote .who b{color:var(--paper); font-family:var(--body);}
 
-  /* ---------- contact ---------- */
   .contact-grid{display:grid; grid-template-columns:1fr 1.3fr; gap:28px;}
   @media (max-width:680px){ .contact-grid{grid-template-columns:1fr;} }
   .field{margin-bottom:14px;}
   .field label{display:block; font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:6px;}
-  .field input, .field textarea{
-    width:100%; background:#0d1016; border:1px solid var(--line); color:var(--paper);
-    border-radius:8px; padding:10px 12px; font-family:var(--body); font-size:14px;
-  }
+  .field input, .field textarea{width:100%; background:#0d1016; border:1px solid var(--line); color:var(--paper); border-radius:8px; padding:10px 12px; font-family:var(--body); font-size:14px;}
   .field input:focus, .field textarea:focus{outline:2px solid var(--green); outline-offset:1px;}
-  .btn{
-    font-family:var(--mono); font-size:13.5px; color:var(--ink); background:var(--green);
-    border:none; border-radius:8px; padding:11px 20px; cursor:pointer; font-weight:600;
-  }
+  .btn{font-family:var(--mono); font-size:13.5px; color:var(--ink); background:var(--green); border:none; border-radius:8px; padding:11px 20px; cursor:pointer; font-weight:600;}
   .btn:hover{filter:brightness(1.08);}
   .btn:focus-visible{outline:2px solid var(--paper); outline-offset:2px;}
-  .ok-banner{
-    background:rgba(61,214,140,.12); border:1px solid var(--green); color:var(--green);
-    border-radius:8px; padding:12px 14px; font-family:var(--mono); font-size:13px; margin-bottom:16px; display:none;
-  }
+  .ok-banner{background:rgba(61,214,140,.12); border:1px solid var(--green); color:var(--green); border-radius:8px; padding:12px 14px; font-family:var(--mono); font-size:13px; margin-bottom:16px; display:none;}
   .ok-banner.show{display:block;}
   .map-frame{border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-top:16px;}
   .map-frame iframe{width:100%; height:200px; border:0; display:block;}
@@ -228,43 +143,43 @@
   footer{padding:30px 0 50px; text-align:center;}
   footer p{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
 
-  .mobile-nav-toggle{display:none;}
-  @media (max-width:560px){
-    .topbar nav{display:none;}
-  }
+  @media (max-width:560px){ .topbar nav{display:none;} }
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="wrap">
-    <div class="brand"><span class="dot"></span> ignacio.antuña.com.ar — todos los sistemas operativos</div>
+    <div class="brand"><span class="dot"></span><span data-i18n="topbarStatus">ignacio.antuña.com.ar — todos los sistemas operativos</span></div>
     <nav>
       <a href="#about">about</a>
       <a href="#skills">skills</a>
       <a href="#experience">experience</a>
       <a href="#contact">contact</a>
     </nav>
+    <div class="langtoggle" role="group" aria-label="Idioma / Language">
+      <button type="button" id="btnEs" onclick="setLang('es', true)">ES</button>
+      <button type="button" id="btnEn" onclick="setLang('en', true)">EN</button>
+    </div>
   </div>
 </div>
 
 <main class="wrap">
 
-  <!-- ======= Hero ======= -->
   <section class="hero">
     <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> ~/ignacio — status</div>
     <div class="window">
       <div class="hero-body">
         <div class="hero-top">
-          <img class="avatar" src="assets/img/profile-img.jpg" alt="Foto de Ignacio Antuña">
+          <img class="avatar" src="assets/img/profile-img.jpg" alt="Ignacio Antuña">
           <div>
             <h1>Ignacio Antuña</h1>
-            <div class="role" id="typedRole">IT Manager</div>
+            <div class="role">IT Manager</div>
           </div>
         </div>
-        <div class="terminal" id="terminal" aria-hidden="true">
+        <div class="terminal" aria-hidden="true">
           <div class="ln"><span class="prompt">$</span> whoami</div>
-          <div class="ln out" id="termOut">IT Manager — Mac SME @ JPMorgan Chase<span class="caret"></span></div>
+          <div class="ln" id="termOut">IT Manager — Mac SME @ JPMorgan Chase<span class="caret"></span></div>
         </div>
         <div class="social-row">
           <a href="https://www.linkedin.com/in/ignacio-antuña-24093373/" target="_blank" rel="noopener">in/ignacio-antuña</a>
@@ -277,37 +192,35 @@
     </div>
   </section>
 
-  <!-- ======= About ======= -->
   <section class="sec reveal" id="about">
     <span class="eyebrow">01 — about</span>
     <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> about.md</div>
     <div class="window">
       <div class="about-grid">
-        <div>
+        <div data-i18n="aboutBody">
           <p>Soy un IT Manager orientado a resultados, con una base sólida en soporte técnico, liderazgo de equipos y operaciones estratégicas. Lidero equipos de alto rendimiento, gestiono la entrega de servicio e impulso mejoras de proceso de forma constante.</p>
           <p>Empecé del lado más hands-on — armando computadoras, resolviendo tickets, aprendiendo HTML por curiosidad — y con los años eso se convirtió en mi forma de gestionar: entender el problema técnico de primera mano antes de delegarlo. Hoy en JPMorgan Chase, a cargo de las operaciones de Mac Support y de iniciativas de mejora continua.</p>
         </div>
         <ul class="meta-list">
-          <li><span class="k">Nacimiento</span><span class="v">18/01/1993</span></li>
-          <li><span class="k">Edad</span><span class="v" id="age">—</span></li>
-          <li><span class="k">Ubicación</span><span class="v">Tigre, Buenos Aires, Argentina</span></li>
+          <li><span class="k" data-i18n="lblBirth">Nacimiento</span><span class="v">18/01/1993</span></li>
+          <li><span class="k" data-i18n="lblAge">Edad</span><span class="v" id="age">—</span></li>
+          <li><span class="k" data-i18n="lblLocation">Ubicación</span><span class="v">Tigre, Buenos Aires, Argentina</span></li>
           <li><span class="k">Email</span><span class="v"><a href="mailto:ignacio.antu@gmail.com">ignacio.antu@gmail.com</a></span></li>
-          <li><span class="k">Teléfono</span><span class="v">+54 9 11 2852 4957</span></li>
+          <li><span class="k" data-i18n="lblPhone">Teléfono</span><span class="v">+54 9 11 2852 4957</span></li>
           <li><span class="k">Website</span><span class="v">ignacio.antuña.com.ar</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ======= Skills ======= -->
   <section class="sec reveal" id="skills">
     <span class="eyebrow">02 — skills</span>
     <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> skills.sh</div>
     <div class="window">
       <div class="skill-groups">
         <div class="skill-group">
-          <h3>Liderazgo &amp; gestión</h3>
-          <div class="tag-row">
+          <h3 data-i18n="grpLeadership">Liderazgo &amp; gestión</h3>
+          <div class="tag-row" data-i18n="tagsLeadership">
             <span class="tag">Liderazgo de equipos</span>
             <span class="tag">ITSM</span>
             <span class="tag">Planificación estratégica</span>
@@ -316,7 +229,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Sistemas operativos</h3>
+          <h3 data-i18n="grpOS">Sistemas operativos</h3>
           <div class="tag-row">
             <span class="tag">macOS</span>
             <span class="tag">Microsoft Windows</span>
@@ -324,8 +237,8 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Tecnologías &amp; herramientas</h3>
-          <div class="tag-row">
+          <h3 data-i18n="grpTools">Tecnologías &amp; herramientas</h3>
+          <div class="tag-row" data-i18n="tagsTools">
             <span class="tag">ServiceNow</span>
             <span class="tag">Jira</span>
             <span class="tag">JAMF</span>
@@ -337,7 +250,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Programación</h3>
+          <h3 data-i18n="grpProg">Programación</h3>
           <div class="tag-row">
             <span class="tag">HTML5</span>
             <span class="tag">CSS3</span>
@@ -351,8 +264,8 @@
         </div>
       </div>
       <div style="margin-top:22px;">
-        <h3 style="font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; font-weight:500;">Idiomas</h3>
-        <ul class="lang-list">
+        <h3 data-i18n="grpLangs" style="font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; font-weight:500;">Idiomas</h3>
+        <ul class="lang-list" data-i18n="langList">
           <li><span>Español</span><span class="muted" style="font-family:var(--mono); font-size:12px;">nativo</span></li>
           <li><span>Inglés</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span></span></li>
           <li><span>Italiano</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></li>
@@ -362,17 +275,16 @@
     </div>
   </section>
 
-  <!-- ======= Experience ======= -->
   <section class="sec reveal" id="experience">
     <span class="eyebrow">03 — experience</span>
     <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> experience.log</div>
     <div class="window">
       <div class="log">
         <div class="log-item">
-          <span class="log-date">sep 2022 → presente</span>
-          <div class="log-role">Manager, Helpdesk Level 2 &amp; Mac SME <span class="badge-current">activo</span></div>
+          <span class="log-date" data-i18n="d1">sep 2022 → presente</span>
+          <div class="log-role">Manager, Helpdesk Level 2 &amp; Mac SME <span class="badge-current" data-i18n="badgeCurrent">activo</span></div>
           <span class="log-co">JPMorgan Chase</span>
-          <ul>
+          <ul data-i18n="b1">
             <li>Lidero un equipo de especialistas que gestiona entornos macOS a nivel empresarial.</li>
             <li>Implemento soluciones estratégicas para simplificar el soporte y reducir el tiempo de resolución.</li>
             <li>Coordino esfuerzos multidisciplinarios para acompañar actualizaciones de sistemas y despliegues de hardware.</li>
@@ -381,10 +293,10 @@
           </ul>
         </div>
         <div class="log-item past">
-          <span class="log-date">2020 → 2022</span>
+          <span class="log-date" data-i18n="d2">2020 → 2022</span>
           <div class="log-role">Manager</div>
           <span class="log-co">Despegar</span>
-          <ul>
+          <ul data-i18n="b2">
             <li>Gestioné un equipo multidisciplinario de soporte técnico y servicios de IT internos.</li>
             <li>Supervisé el desempeño del equipo, definiendo KPIs y mentoreando a sus integrantes.</li>
             <li>Lideré la planificación estratégica de actualizaciones de sistemas y mejoras de servicio.</li>
@@ -393,109 +305,80 @@
           </ul>
         </div>
         <div class="log-item past">
-          <span class="log-date">2017 → 2020</span>
-          <div class="log-role">Head of IT Department</div>
+          <span class="log-date" data-i18n="d3">2017 → 2020</span>
+          <div class="log-role" data-i18n="r3">Head of IT Department</div>
           <span class="log-co">Transportes Cantarini S.R.L.</span>
-          <ul>
+          <ul data-i18n="b3">
             <li>Soporte de IT de punta a punta: infraestructura, redes y equipos de usuarios finales.</li>
             <li>Implementaciones de sistemas y mantenimiento de equipos críticos.</li>
             <li>Medidas proactivas que mejoraron el uptime y redujeron la tasa de incidentes.</li>
           </ul>
         </div>
         <div class="log-item past">
-          <span class="log-date">2016 → 2017</span>
-          <div class="log-role">Soporte Ssr.</div>
+          <span class="log-date" data-i18n="d4">2016 → 2017</span>
+          <div class="log-role" data-i18n="r4">Soporte Ssr.</div>
           <span class="log-co">Farmacia SAID</span>
-          <ul>
+          <ul data-i18n="b4">
             <li>Soporte técnico en distintas sucursales y a usuarios VIP.</li>
             <li>Mantenimiento y configuración de hardware/software.</li>
           </ul>
         </div>
         <div class="log-item past">
-          <span class="log-date">2014 → 2016</span>
-          <div class="log-role">Help Desk / Soporte</div>
+          <span class="log-date" data-i18n="d5">2014 → 2016</span>
+          <div class="log-role" data-i18n="r5">Help Desk / Soporte</div>
           <span class="log-co">Digitronics</span>
-          <ul>
+          <ul data-i18n="b5">
             <li>Resolución de tickets multinivel y reparación de hardware.</li>
           </ul>
         </div>
       </div>
       <div class="edu-note">
         <span class="log-date">2009 → 2011</span>
-        <div class="log-role" style="font-size:15px;">Bachiller en Economía y Gestión de las Empresas</div>
+        <div class="log-role" data-i18n="eduTitle" style="font-size:15px;">Bachiller en Economía y Gestión de las Empresas</div>
         <span class="log-co">Instituto Gaspar Campos, San Miguel, Buenos Aires</span>
       </div>
     </div>
   </section>
 
-  <!-- ======= Testimonials ======= -->
   <section class="sec reveal" id="testimonials">
     <span class="eyebrow">04 — reviews</span>
     <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> testimonials.json</div>
     <div class="window">
-      <div class="quote-grid">
-        <div class="quote">
-          <p>"Trabajar con Ignacio hace que ningún día sea el mismo."</p>
-          <div class="who"><b>Gabriel DeLunardo</b> — FullStack Developer</div>
-        </div>
-        <div class="quote">
-          <p>"Nacho es una persona creativa y muy ocurrente."</p>
-          <div class="who"><b>León Saia</b> — Web Designer &amp; Programmer</div>
-        </div>
-        <div class="quote">
-          <p>"Nacho es de esas personas con las que podés hablar sin parar de todo."</p>
-          <div class="who"><b>Micaela Filandino</b> — Programmer &amp; Professor</div>
-        </div>
-        <div class="quote">
-          <p>"Cuando se le encomienda una tarea, concentra todos sus esfuerzos en resolverla."</p>
-          <div class="who"><b>Marcos Caro</b> — Psychologist</div>
-        </div>
-        <div class="quote">
-          <p>"Con Nacho siempre se aprenden cosas nuevas."</p>
-          <div class="who"><b>Rodrigo Trindade</b> — Mobile Tech Lead</div>
-        </div>
+      <div class="quote-grid" data-i18n="quotes">
+        <div class="quote"><p>"Trabajar con Ignacio hace que ningún día sea el mismo."</p><div class="who"><b>Gabriel DeLunardo</b> — FullStack Developer</div></div>
+        <div class="quote"><p>"Nacho es una persona creativa y muy ocurrente."</p><div class="who"><b>León Saia</b> — Web Designer &amp; Programmer</div></div>
+        <div class="quote"><p>"Nacho es de esas personas con las que podés hablar sin parar de todo."</p><div class="who"><b>Micaela Filandino</b> — Programmer &amp; Professor</div></div>
+        <div class="quote"><p>"Cuando se le encomienda una tarea, concentra todos sus esfuerzos en resolverla."</p><div class="who"><b>Marcos Caro</b> — Psychologist</div></div>
+        <div class="quote"><p>"Con Nacho siempre se aprenden cosas nuevas."</p><div class="who"><b>Rodrigo Trindade</b> — Mobile Tech Lead</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ======= Contact ======= -->
   <section class="sec reveal" id="contact">
     <span class="eyebrow">05 — contact</span>
     <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> contact.sh</div>
     <div class="window">
       <div class="contact-grid">
         <div>
-          <p class="muted" style="font-size:14px;">El Talar, Buenos Aires. Tengo vehículo propio, la movilidad no es problema.</p>
+          <p class="muted" style="font-size:14px;" data-i18n="contactIntro">El Talar, Buenos Aires. Tengo vehículo propio, la movilidad no es problema.</p>
           <div class="map-frame">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26313.785899179235!2d-58.67158321426154!3d-34.47186072179097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca3630ce51b53%3A0x6cb44ad91aa47d6c!2sEl%20Talar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1600380916272!5m2!1ses!2sar"
-              loading="lazy" allowfullscreen title="Ubicación aproximada"></iframe>
+              loading="lazy" allowfullscreen title="map"></iframe>
           </div>
         </div>
         <div>
-          <div class="ok-banner" id="okBanner">✓ Mensaje enviado. Gracias, te respondo a la brevedad.</div>
+          <div class="ok-banner" id="okBanner" data-i18n="okBanner">✓ Mensaje enviado. Gracias, te respondo a la brevedad.</div>
           <form method="POST" action="https://formsubmit.co/ignacio.antu@gmail.com" id="contactForm">
             <input type="hidden" name="_subject" value="Nuevo mensaje desde ignacio.antuña.com.ar">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://ignacio.xn--antua-rta.com.ar/index.html?ok=1">
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-            <div class="field">
-              <label for="name">Nombre</label>
-              <input type="text" name="name" id="name" required minlength="2">
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" required>
-            </div>
-            <div class="field">
-              <label for="motivo">Motivo</label>
-              <input type="text" name="motivo" id="motivo" required minlength="3">
-            </div>
-            <div class="field">
-              <label for="mensaje">Mensaje</label>
-              <textarea name="mensaje" id="mensaje" rows="6" required></textarea>
-            </div>
-            <button type="submit" class="btn">Enviar mensaje</button>
+            <div class="field"><label for="name" data-i18n="lblName">Nombre</label><input type="text" name="name" id="name" required minlength="2"></div>
+            <div class="field"><label for="email">Email</label><input type="email" name="email" id="email" required></div>
+            <div class="field"><label for="motivo" data-i18n="lblSubject">Motivo</label><input type="text" name="motivo" id="motivo" required minlength="3"></div>
+            <div class="field"><label for="mensaje" data-i18n="lblMessage">Mensaje</label><textarea name="mensaje" id="mensaje" rows="6" required></textarea></div>
+            <button type="submit" class="btn" data-i18n="btnSend">Enviar mensaje</button>
           </form>
         </div>
       </div>
@@ -505,57 +388,130 @@
 </main>
 
 <footer>
-  <p>$ uptime — desde 2019 escribiendo HTML para entender mejor mi propio trabajo.</p>
+  <p data-i18n="footerLine">$ uptime — desde 2019 escribiendo HTML para entender mejor mi propio trabajo.</p>
 </footer>
 
 <script>
-  // edad calculada en vivo, sin depender de un archivo aparte
+  var I18N = {
+    es: {
+      topbarStatus: "ignacio.antuña.com.ar — todos los sistemas operativos",
+      lblBirth: "Nacimiento", lblAge: "Edad", lblLocation: "Ubicación", lblPhone: "Teléfono",
+      grpLeadership: "Liderazgo &amp; gestión", grpOS: "Sistemas operativos", grpTools: "Tecnologías &amp; herramientas",
+      grpProg: "Programación", grpLangs: "Idiomas",
+      tagsLeadership: '<span class="tag">Liderazgo de equipos</span><span class="tag">ITSM</span><span class="tag">Planificación estratégica</span><span class="tag">Colaboración cross-funcional</span><span class="tag">KPIs &amp; SLAs</span>',
+      tagsTools: '<span class="tag">ServiceNow</span><span class="tag">Jira</span><span class="tag">JAMF</span><span class="tag">Workspace ONE</span><span class="tag">VMware</span><span class="tag">Redes</span><span class="tag">Microsoft Office</span><span class="tag">AI</span>',
+      langList: '<li><span>Español</span><span class="muted" style="font-family:var(--mono);font-size:12px;">nativo</span></li><li><span>Inglés</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span></span></li><li><span>Italiano</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></li><li><span>Ruso</span><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></li>',
+      aboutBody: '<p>Soy un IT Manager orientado a resultados, con una base sólida en soporte técnico, liderazgo de equipos y operaciones estratégicas. Lidero equipos de alto rendimiento, gestiono la entrega de servicio e impulso mejoras de proceso de forma constante.</p><p>Empecé del lado más hands-on — armando computadoras, resolviendo tickets, aprendiendo HTML por curiosidad — y con los años eso se convirtió en mi forma de gestionar: entender el problema técnico de primera mano antes de delegarlo. Hoy en JPMorgan Chase, a cargo de las operaciones de Mac Support y de iniciativas de mejora continua.</p>',
+      badgeCurrent: "activo",
+      d1: "sep 2022 → presente", d2: "2020 → 2022", d3: "2017 → 2020", d4: "2016 → 2017", d5: "2014 → 2016",
+      r3: "Head of IT Department", r4: "Soporte Ssr.", r5: "Help Desk / Soporte",
+      b1: '<li>Lidero un equipo de especialistas que gestiona entornos macOS a nivel empresarial.</li><li>Implemento soluciones estratégicas para simplificar el soporte y reducir el tiempo de resolución.</li><li>Coordino esfuerzos multidisciplinarios para acompañar actualizaciones de sistemas y despliegues de hardware.</li><li>Diseño y mantengo la documentación de los flujos de ITSM.</li><li>Impulso métricas de desempeño y el cumplimiento de SLAs.</li>',
+      b2: '<li>Gestioné un equipo multidisciplinario de soporte técnico y servicios de IT internos.</li><li>Supervisé el desempeño del equipo, definiendo KPIs y mentoreando a sus integrantes.</li><li>Lideré la planificación estratégica de actualizaciones de sistemas y mejoras de servicio.</li><li>Coordiné proyectos junto a RRHH, Finanzas y Producto.</li><li>Entregué reportes a stakeholders y mejoré los procesos de reporting.</li>',
+      b3: '<li>Soporte de IT de punta a punta: infraestructura, redes y equipos de usuarios finales.</li><li>Implementaciones de sistemas y mantenimiento de equipos críticos.</li><li>Medidas proactivas que mejoraron el uptime y redujeron la tasa de incidentes.</li>',
+      b4: '<li>Soporte técnico en distintas sucursales y a usuarios VIP.</li><li>Mantenimiento y configuración de hardware/software.</li>',
+      b5: '<li>Resolución de tickets multinivel y reparación de hardware.</li>',
+      eduTitle: "Bachiller en Economía y Gestión de las Empresas",
+      quotes: '<div class="quote"><p>"Trabajar con Ignacio hace que ningún día sea el mismo."</p><div class="who"><b>Gabriel DeLunardo</b> — FullStack Developer</div></div><div class="quote"><p>"Nacho es una persona creativa y muy ocurrente."</p><div class="who"><b>León Saia</b> — Web Designer &amp; Programmer</div></div><div class="quote"><p>"Nacho es de esas personas con las que podés hablar sin parar de todo."</p><div class="who"><b>Micaela Filandino</b> — Programmer &amp; Professor</div></div><div class="quote"><p>"Cuando se le encomienda una tarea, concentra todos sus esfuerzos en resolverla."</p><div class="who"><b>Marcos Caro</b> — Psychologist</div></div><div class="quote"><p>"Con Nacho siempre se aprenden cosas nuevas."</p><div class="who"><b>Rodrigo Trindade</b> — Mobile Tech Lead</div></div>',
+      contactIntro: "El Talar, Buenos Aires. Tengo vehículo propio, la movilidad no es problema.",
+      okBanner: "✓ Mensaje enviado. Gracias, te respondo a la brevedad.",
+      lblName: "Nombre", lblSubject: "Motivo", lblMessage: "Mensaje", btnSend: "Enviar mensaje",
+      footerLine: "$ uptime — desde 2019 escribiendo HTML para entender mejor mi propio trabajo.",
+      ageSuffix: " años"
+    },
+    en: {
+      topbarStatus: "ignacio.antuña.com.ar — all systems operational",
+      lblBirth: "Born", lblAge: "Age", lblLocation: "Location", lblPhone: "Phone",
+      grpLeadership: "Leadership &amp; management", grpOS: "Operating systems", grpTools: "Technologies &amp; tools",
+      grpProg: "Programming languages", grpLangs: "Languages",
+      tagsLeadership: '<span class="tag">Team leadership</span><span class="tag">ITSM</span><span class="tag">Strategic planning</span><span class="tag">Cross-functional collaboration</span><span class="tag">KPIs &amp; SLAs</span>',
+      tagsTools: '<span class="tag">ServiceNow</span><span class="tag">Jira</span><span class="tag">JAMF</span><span class="tag">Workspace ONE</span><span class="tag">VMware</span><span class="tag">Networking</span><span class="tag">Microsoft Office</span><span class="tag">AI</span>',
+      langList: '<li><span>Spanish</span><span class="muted" style="font-family:var(--mono);font-size:12px;">native</span></li><li><span>English</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span></span></li><li><span>Italian</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></li><li><span>Russian</span><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></li>',
+      aboutBody: '<p>I\'m a results-oriented IT Manager with a strong foundation in technical support, team leadership, and strategic operations. I lead high-performing teams, manage service delivery, and keep pushing process improvements forward.</p><p>I started on the hands-on side — building PCs, resolving tickets, picking up HTML out of curiosity — and over the years that turned into how I manage: understand the technical problem firsthand before delegating it. Currently at JPMorgan Chase, overseeing Mac Support operations and continuous improvement initiatives.</p>',
+      badgeCurrent: "current",
+      d1: "Sep 2022 → present", d2: "2020 → 2022", d3: "2017 → 2020", d4: "2016 → 2017", d5: "2014 → 2016",
+      r3: "Head of IT Department", r4: "Support Ssr.", r5: "Help Desk / Support",
+      b1: '<li>Lead a team of specialists managing macOS environments across enterprise-level operations.</li><li>Implement strategic solutions to streamline support processes and reduce issue resolution time.</li><li>Coordinate cross-functional efforts to support system upgrades and hardware deployments.</li><li>Design and maintain documentation for IT service management (ITSM) workflows.</li><li>Drive performance metrics and service level agreement (SLA) adherence.</li>',
+      b2: '<li>Managed a cross-functional team delivering technical support and internal IT services.</li><li>Oversaw team performance and development, setting KPIs and mentoring team members.</li><li>Led strategic planning efforts for system upgrades and service delivery improvements.</li><li>Coordinated project execution in collaboration with HR, Finance, and Product teams.</li><li>Delivered detailed reports to stakeholders and improved reporting processes.</li>',
+      b3: '<li>Delivered end-to-end IT support, managing infrastructure, networks, and end-user devices.</li><li>Led system implementations and maintenance of critical equipment.</li><li>Introduced proactive measures that improved uptime and reduced incident rates.</li>',
+      b4: '<li>Provided technical support across branches and VIP users.</li><li>Maintained and configured hardware/software to ensure operational stability.</li>',
+      b5: '<li>Responded to multi-tier support tickets and performed hardware repairs.</li>',
+      eduTitle: "High School Diploma, Business Economics &amp; Management",
+      quotes: '<div class="quote"><p>"Working with Ignacio means no day is ever the same."</p><div class="who"><b>Gabriel DeLunardo</b> — FullStack Developer</div></div><div class="quote"><p>"Nacho is creative and full of ideas."</p><div class="who"><b>León Saia</b> — Web Designer &amp; Programmer</div></div><div class="quote"><p>"Nacho is the kind of person you can talk to about anything, for hours."</p><div class="who"><b>Micaela Filandino</b> — Programmer &amp; Professor</div></div><div class="quote"><p>"Once he\'s given a task, he puts all his focus into solving it."</p><div class="who"><b>Marcos Caro</b> — Psychologist</div></div><div class="quote"><p>"You always learn something new with Nacho."</p><div class="who"><b>Rodrigo Trindade</b> — Mobile Tech Lead</div></div>',
+      contactIntro: "El Talar, Buenos Aires. I have my own car, so getting around is never an issue.",
+      okBanner: "✓ Message sent. Thanks — I'll get back to you shortly.",
+      lblName: "Name", lblSubject: "Subject", lblMessage: "Message", btnSend: "Send message",
+      footerLine: "$ uptime — writing HTML since 2019 to better understand my own job.",
+      ageSuffix: " years old"
+    }
+  };
+
+  function applyI18n(lang){
+    var dict = I18N[lang] || I18N.es;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.getElementById('htmlRoot').setAttribute('lang', lang);
+    document.getElementById('btnEs').classList.toggle('active', lang === 'es');
+    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+    var ageEl = document.getElementById('age');
+    if (ageEl && window.__age !== undefined) ageEl.textContent = window.__age + dict.ageSuffix;
+    window.__lang = lang;
+  }
+
+  function setLang(lang, manual){
+    if (manual) { try { localStorage.setItem('lang', lang); } catch(e){} }
+    applyI18n(lang);
+  }
+
   (function(){
     var birth = new Date(1993,0,18);
     var now = new Date();
     var age = now.getFullYear() - birth.getFullYear();
     if (now.getMonth() < birth.getMonth() || (now.getMonth()===birth.getMonth() && now.getDate()<birth.getDate())) age--;
-    var el = document.getElementById('age');
-    if (el) el.textContent = age + ' años';
+    window.__age = age;
   })();
 
-  // banner de "enviado" si venimos de un POST exitoso del formulario
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch(e){}
+    var lang = saved;
+    if (!lang){
+      var nav = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
+      lang = nav.indexOf('es') === 0 ? 'es' : 'en';
+    }
+    applyI18n(lang);
+  })();
+
   if (location.search.indexOf('ok=1') !== -1){
     var b = document.getElementById('okBanner');
     if (b) b.classList.add('show');
   }
 
-  // mini animación de terminal en el hero (respeta reduced-motion)
   (function(){
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduce) return;
-    var lines = [
-      'IT Manager — Mac SME @ JPMorgan Chase',
-      'ex-soporte, ex-armador de PCs, siempre IT',
-      'Tigre, Buenos Aires, Argentina'
-    ];
+    var lines = {
+      es: ['IT Manager — Mac SME @ JPMorgan Chase', 'ex-soporte, ex-armador de PCs, siempre IT', 'Tigre, Buenos Aires, Argentina'],
+      en: ['IT Manager — Mac SME @ JPMorgan Chase', 'ex-helpdesk, ex-PC builder, IT for life', 'Tigre, Buenos Aires, Argentina']
+    };
     var out = document.getElementById('termOut');
     if (!out) return;
     var i = 0;
     function cycle(){
-      out.innerHTML = lines[i] + '<span class="caret"></span>';
-      i = (i+1) % lines.length;
+      var arr = lines[window.__lang] || lines.es;
+      out.innerHTML = arr[i % arr.length] + '<span class="caret"></span>';
+      i++;
       setTimeout(cycle, 3200);
     }
     setTimeout(cycle, 3200);
   })();
 
-  // scroll reveal simple
   (function(){
     var items = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)){
-      items.forEach(function(el){ el.classList.add('in'); });
-      return;
-    }
+    if (!('IntersectionObserver' in window)){ items.forEach(function(el){ el.classList.add('in'); }); return; }
     var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
-      });
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
     }, {threshold:.12});
     items.forEach(function(el){ obs.observe(el); });
   })();
