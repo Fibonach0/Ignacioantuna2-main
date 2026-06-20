@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>404 Pagina no encontrada</title>
-    <link type='text/css' rel='stylesheet' href='https://cdn.3up.dk/flexgrid.io@2.5.1/css/flexgrid.min.css'>
-    <link type='text/css' rel="stylesheet" href="/assets/style.css">
-
-    <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src='https://cdn.3up.dk/in-view@0.6.1'></script>
-    <script src="/assets/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — página no encontrada</title>
+<link rel="icon" href="assets/img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#11151c; --panel:#181d27; --panel-2:#1f2530; --line:#2b323f;
+    --paper:#e8eaed; --muted:#8b93a1; --green:#3dd68c; --amber:#f2a93b; --red:#f2545b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--ink); color:var(--paper); font-family:'IBM Plex Mono', monospace; padding:20px;
+  }
+  .window{max-width:440px; width:100%; border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+  .winhead{display:flex; align-items:center; gap:10px; padding:10px 16px; background:var(--panel-2); font-size:12px; color:var(--muted);}
+  .traffic{display:flex; gap:7px;}
+  .traffic span{width:11px; height:11px; border-radius:50%; display:inline-block;}
+  .traffic .r{background:var(--red);} .traffic .a{background:var(--amber);} .traffic .g{background:var(--green);}
+  .body{background:var(--panel); padding:28px;}
+  .code{font-family:'Space Grotesk', sans-serif; font-size:52px; font-weight:700; color:var(--red); margin:0 0 6px;}
+  p{color:var(--muted); font-size:14px; margin:0 0 18px; line-height:1.6;}
+  .ln{margin-bottom:4px;}
+  .prompt{color:var(--green);}
+  a.btn{
+    display:inline-block; background:var(--green); color:var(--ink); text-decoration:none;
+    font-weight:600; border-radius:8px; padding:10px 16px; font-size:13px;
+  }
+</style>
 </head>
-
 <body>
-    <!-- partial:index.partial.html -->
-    <div class="container">
-        <div class="row">
-            <div class="xs-12 md-6 mx-auto">
-                <div id="countUp">
-                    <div class="number" data-count="404">0</div>
-                    <div class="text">Pagina no encontrada</div>
-                    <div class="text">Puede que no signifique nada.</div>
-                    <div class="text">O que probablemente estoy trabajando en algo que explotó.</div>
-                </div>
-            </div>
-        </div>
+  <div class="window">
+    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> 404.log</div>
+    <div class="body">
+      <p class="ln"><span class="prompt">$</span> cd esa-página-que-buscabas</p>
+      <p class="ln">bash: no existe ese archivo o directorio</p>
+      <h1 class="code">404</h1>
+      <p>La página que buscás no está (o se mudó). Volvé al inicio y probá de nuevo.</p>
+      <a class="btn" href="index.html">← Volver al inicio</a>
     </div>
-
-
+  </div>
 </body>
-
 </html>
