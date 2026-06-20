@@ -2,566 +2,564 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Ignacio Antuña.</title>
-<meta content="Página personal de Ignacio Antuña: estudiante de programación, soporte técnico e infraestructura, Buenos Aires, Argentina." name="description">
-<meta content="Ignacio Antuña, programación, soporte técnico, infraestructura, Buenos Aires, Argentina" name="keywords">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ignacio Antuña — IT Manager</title>
+<meta name="description" content="Ignacio Antuña, IT Manager en JPMorgan Chase. Liderazgo de equipos de soporte, ITSM, infraestructura Mac/Windows/Linux, Buenos Aires, Argentina.">
+<meta name="keywords" content="Ignacio Antuña, IT Manager, ITSM, Mac SME, soporte técnico, Buenos Aires">
 
-<!-- Open Graph / redes sociales -->
-<meta property="og:title" content="Ignacio Antuña">
-<meta property="og:description" content="Página personal de Ignacio Antuña: estudiante de programación, soporte técnico e infraestructura, Buenos Aires, Argentina.">
+<meta property="og:title" content="Ignacio Antuña — IT Manager">
+<meta property="og:description" content="IT Manager en JPMorgan Chase. Liderazgo de equipos de soporte, ITSM e infraestructura. Buenos Aires, Argentina.">
 <meta property="og:image" content="assets/img/profile-img.jpg">
 <meta property="og:url" content="https://ignacio.antuña.com.ar/">
 <meta property="og:type" content="website">
 
-<!-- Favicons -->
-<link href="assets/img/favicon.png" rel="icon">
-<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-16x16.png">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="icon" href="assets/img/favicon.ico">
 
-<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<style>
+  :root{
+    --ink:#11151c;
+    --panel:#181d27;
+    --panel-2:#1f2530;
+    --line:#2b323f;
+    --paper:#e8eaed;
+    --muted:#8b93a1;
+    --green:#3dd68c;
+    --amber:#f2a93b;
+    --red:#f2545b;
+    --radius:14px;
+    --maxw:880px;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
 
-<!-- Vendor CSS Files -->
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-<link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
 
-<!-- Template Main CSS File -->
-<link href="assets/css/style.css" rel="stylesheet">
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
 
-<!--Scripts-->
-<script type="text/javascript" src="/assets/js/main.js"></script>
-<script type="text/javascript" src="/assets/js/date.js"></script>
-<!-- OJO: se sacó smtpjs.com y mail.js porque exponían tu contraseña de Gmail en texto plano.
-     El formulario de contacto ahora usa Web3Forms (más abajo), que no necesita contraseñas en el cliente. -->
+  /* ---------- topbar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(17,21,28,.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex; align-items:center; justify-content:space-between; height:56px;}
+  .topbar .brand{font-family:var(--mono); font-size:14px; color:var(--muted); display:flex; gap:8px; align-items:center;}
+  .topbar .dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px rgba(61,214,140,.15);}
+  .topbar nav{display:flex; gap:22px; font-family:var(--mono); font-size:13px;}
+  .topbar nav a{text-decoration:none; color:var(--muted); transition:color .15s;}
+  .topbar nav a:hover, .topbar nav a:focus-visible{color:var(--paper);}
+
+  /* ---------- window chrome (signature element) ---------- */
+  .winhead{
+    display:flex; align-items:center; gap:10px;
+    padding:10px 16px;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-bottom:none;
+    border-radius:12px 12px 0 0;
+    font-family:var(--mono); font-size:12px; color:var(--muted);
+  }
+  .traffic{display:flex; gap:7px; margin-right:4px;}
+  .traffic span{width:11px; height:11px; border-radius:50%; display:inline-block;}
+  .traffic .r{background:var(--red);}
+  .traffic .a{background:var(--amber);}
+  .traffic .g{background:var(--green);}
+  .window{
+    border:1px solid var(--line);
+    border-radius:0 0 12px 12px;
+    background:var(--panel);
+    padding:28px;
+    margin-bottom:56px;
+  }
+  @media (max-width:600px){ .window{padding:20px;} }
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  h1,h2,h3,h4{font-family:var(--display); margin:0 0 .4em; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--green); margin-bottom:10px; display:block;
+  }
+  p{margin:0 0 1em; color:var(--paper);}
+  .muted{color:var(--muted);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 0;}
+  .hero .window{padding:0; overflow:hidden;}
+  .hero-body{padding:36px;}
+  @media (max-width:600px){ .hero-body{padding:24px;} }
+  .hero-top{display:flex; gap:22px; align-items:center; margin-bottom:22px;}
+  .avatar{width:76px; height:76px; border-radius:50%; object-fit:cover; border:2px solid var(--line);}
+  .hero h1{font-size:clamp(28px,5vw,42px); color:var(--paper);}
+  .hero .role{font-family:var(--mono); color:var(--green); font-size:15px;}
+  .terminal{
+    font-family:var(--mono); font-size:14px; color:#c7cbd1;
+    background:#0d1016; border:1px solid var(--line); border-radius:10px;
+    padding:18px 20px; margin-top:18px;
+  }
+  .terminal .ln{margin-bottom:6px;}
+  .terminal .prompt{color:var(--green);}
+  .terminal .out{color:var(--paper);}
+  .caret{display:inline-block; width:8px; height:1em; background:var(--amber); vertical-align:-2px; animation:blink 1s steps(1) infinite;}
+  @media (prefers-reduced-motion: reduce){ .caret{animation:none;} }
+  @keyframes blink{50%{opacity:0;}}
+
+  .social-row{display:flex; gap:14px; margin-top:20px; flex-wrap:wrap;}
+  .social-row a{
+    display:flex; align-items:center; gap:7px;
+    font-family:var(--mono); font-size:12.5px; color:var(--muted);
+    border:1px solid var(--line); border-radius:8px; padding:7px 11px;
+    text-decoration:none; transition:border-color .15s, color .15s;
+  }
+  .social-row a:hover, .social-row a:focus-visible{border-color:var(--green); color:var(--paper);}
+  .social-row svg{width:14px; height:14px; fill:currentColor;}
+
+  /* ---------- section heads ---------- */
+  .sec{margin-top:40px;}
+  .sec h2{font-size:22px; color:var(--paper);}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  @media (max-width:680px){ .about-grid{grid-template-columns:1fr;} }
+  .meta-list{list-style:none; padding:0; margin:0; font-family:var(--mono); font-size:13.5px;}
+  .meta-list li{display:flex; gap:10px; padding:8px 0; border-bottom:1px dashed var(--line);}
+  .meta-list li:last-child{border-bottom:none;}
+  .meta-list .k{color:var(--muted); min-width:108px;}
+  .meta-list .v{color:var(--paper);}
+
+  /* ---------- skills ---------- */
+  .skill-groups{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:680px){ .skill-groups{grid-template-columns:1fr;} }
+  .skill-group h3{font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; font-weight:500;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-family:var(--mono); font-size:12.5px; color:var(--paper);
+    background:var(--panel-2); border:1px solid var(--line); border-radius:7px;
+    padding:6px 10px; display:inline-flex; align-items:center; gap:6px;
+  }
+  .tag::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--green);}
+  .lang-list{list-style:none; margin:0; padding:0;}
+  .lang-list li{display:flex; justify-content:space-between; align-items:center; padding:7px 0; font-size:14px;}
+  .pips{display:flex; gap:4px;}
+  .pip{width:9px; height:9px; border-radius:2px; background:var(--line);}
+  .pip.on{background:var(--amber);}
+
+  /* ---------- experience / changelog ---------- */
+  .log{border-left:2px solid var(--line); margin-left:6px; padding-left:24px;}
+  .log-item{position:relative; padding-bottom:26px;}
+  .log-item:last-child{padding-bottom:0;}
+  .log-item::before{
+    content:""; position:absolute; left:-29px; top:4px;
+    width:11px; height:11px; border-radius:50%; background:var(--ink); border:2px solid var(--green);
+  }
+  .log-item.past::before{border-color:var(--muted);}
+  .log-date{font-family:var(--mono); font-size:12px; color:var(--muted);}
+  .log-role{font-size:17px; font-weight:600; margin:2px 0 1px; color:var(--paper); font-family:var(--display);}
+  .log-co{font-family:var(--mono); font-size:13px; color:var(--green); margin-bottom:8px; display:block;}
+  .log-item ul{margin:0; padding-left:18px; color:var(--paper);}
+  .log-item li{margin-bottom:4px; font-size:14.5px;}
+  .badge-current{
+    font-family:var(--mono); font-size:10.5px; color:var(--ink); background:var(--green);
+    border-radius:5px; padding:2px 7px; margin-left:8px; vertical-align:2px; letter-spacing:.04em;
+  }
+  .edu-note{margin-top:22px; padding-top:18px; border-top:1px dashed var(--line);}
+  .edu-note .log-date{display:block; margin-bottom:2px;}
+
+  /* ---------- testimonials ---------- */
+  .quote-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:680px){ .quote-grid{grid-template-columns:1fr;} }
+  .quote{
+    background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:16px 18px;
+    font-size:14px;
+  }
+  .quote p{margin-bottom:10px; color:var(--paper);}
+  .quote .who{font-family:var(--mono); font-size:12px; color:var(--muted);}
+  .quote .who b{color:var(--paper); font-family:var(--body);}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1.3fr; gap:28px;}
+  @media (max-width:680px){ .contact-grid{grid-template-columns:1fr;} }
+  .field{margin-bottom:14px;}
+  .field label{display:block; font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%; background:#0d1016; border:1px solid var(--line); color:var(--paper);
+    border-radius:8px; padding:10px 12px; font-family:var(--body); font-size:14px;
+  }
+  .field input:focus, .field textarea:focus{outline:2px solid var(--green); outline-offset:1px;}
+  .btn{
+    font-family:var(--mono); font-size:13.5px; color:var(--ink); background:var(--green);
+    border:none; border-radius:8px; padding:11px 20px; cursor:pointer; font-weight:600;
+  }
+  .btn:hover{filter:brightness(1.08);}
+  .btn:focus-visible{outline:2px solid var(--paper); outline-offset:2px;}
+  .ok-banner{
+    background:rgba(61,214,140,.12); border:1px solid var(--green); color:var(--green);
+    border-radius:8px; padding:12px 14px; font-family:var(--mono); font-size:13px; margin-bottom:16px; display:none;
+  }
+  .ok-banner.show{display:block;}
+  .map-frame{border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-top:16px;}
+  .map-frame iframe{width:100%; height:200px; border:0; display:block;}
+
+  footer{padding:30px 0 50px; text-align:center;}
+  footer p{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+
+  .mobile-nav-toggle{display:none;}
+  @media (max-width:560px){
+    .topbar nav{display:none;}
+  }
+</style>
 </head>
-
 <body>
 
-<!-- ======= Header ======= -->
-<header id="header">
-<div class="d-flex flex-column">
-<div class="profile">
-<img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-<h1 class="text-light"><a href="index.html">Ignacio Antuña</a></h1>
-<div class="social-links mt-3 text-center">
-<a href="https://twitter.com/Ignacio_antu" class="twitter"><i class="bx bxl-twitter"></i></a>
-<a href="https://www.facebook.com/Pyro.A" class="facebook"><i class="bx bxl-facebook"></i></a>
-<a href="https://www.instagram.com/igna.antu/" class="instagram"><i class="bx bxl-instagram"></i></a>
-<a href="https://www.linkedin.com/in/ignacio-antuña-24093373/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-<a href="https://discord.gg/Rp6KzQJ" class="Discord"><span class="iconify" data-icon="bx:bxl-discord" data-inline="false"></span></a>
-</div>
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span> ignacio.antuña.com.ar — todos los sistemas operativos</div>
+    <nav>
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
 </div>
 
-<nav class="nav-menu">
-<ul>
-<li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
-<li><a href="#about"><i class="bx bx-user"></i> <span>Sobre mí</span></a></li>
-<li><a href="#skills"><i class="bx bx-file-blank"></i> <span>Habilidades</span></a></li>
-<!-- <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li> -->
-<li><a href="#testimonials"><i class="bx bx-server"></i> Testimonios</a></li>
-<li><a href="#contact"><i class="bx bx-envelope"></i> Contacto</a></li>
-</ul>
-</nav>
-<!-- .nav-menu -->
+<main class="wrap">
 
-<button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-</div>
-</header>
-<!-- End Header -->
+  <!-- ======= Hero ======= -->
+  <section class="hero">
+    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> ~/ignacio — status</div>
+    <div class="window">
+      <div class="hero-body">
+        <div class="hero-top">
+          <img class="avatar" src="assets/img/profile-img.jpg" alt="Foto de Ignacio Antuña">
+          <div>
+            <h1>Ignacio Antuña</h1>
+            <div class="role" id="typedRole">IT Manager</div>
+          </div>
+        </div>
+        <div class="terminal" id="terminal" aria-hidden="true">
+          <div class="ln"><span class="prompt">$</span> whoami</div>
+          <div class="ln out" id="termOut">IT Manager — Mac SME @ JPMorgan Chase<span class="caret"></span></div>
+        </div>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/ignacio-antuña-24093373/" target="_blank" rel="noopener">in/ignacio-antuña</a>
+          <a href="https://twitter.com/Ignacio_antu" target="_blank" rel="noopener">@Ignacio_antu</a>
+          <a href="https://www.instagram.com/igna.antu/" target="_blank" rel="noopener">@igna.antu</a>
+          <a href="https://www.facebook.com/Pyro.A" target="_blank" rel="noopener">facebook</a>
+          <a href="https://discord.gg/Rp6KzQJ" target="_blank" rel="noopener">discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-<div class="hero-container" data-aos="fade-in">
-<h1>Ignacio Antuña</h1>
-<p>Yo soy <span class="typed" data-typed-items="emprendedor, estudiante, trabajador, ."></span></p>
-</div>
-</section>
-<!-- End Hero -->
+  <!-- ======= About ======= -->
+  <section class="sec reveal" id="about">
+    <span class="eyebrow">01 — about</span>
+    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> about.md</div>
+    <div class="window">
+      <div class="about-grid">
+        <div>
+          <p>Soy un IT Manager orientado a resultados, con una base sólida en soporte técnico, liderazgo de equipos y operaciones estratégicas. Lidero equipos de alto rendimiento, gestiono la entrega de servicio e impulso mejoras de proceso de forma constante.</p>
+          <p>Empecé del lado más hands-on — armando computadoras, resolviendo tickets, aprendiendo HTML por curiosidad — y con los años eso se convirtió en mi forma de gestionar: entender el problema técnico de primera mano antes de delegarlo. Hoy en JPMorgan Chase, a cargo de las operaciones de Mac Support y de iniciativas de mejora continua.</p>
+        </div>
+        <ul class="meta-list">
+          <li><span class="k">Nacimiento</span><span class="v">18/01/1993</span></li>
+          <li><span class="k">Edad</span><span class="v" id="age">—</span></li>
+          <li><span class="k">Ubicación</span><span class="v">Tigre, Buenos Aires, Argentina</span></li>
+          <li><span class="k">Email</span><span class="v"><a href="mailto:ignacio.antu@gmail.com">ignacio.antu@gmail.com</a></span></li>
+          <li><span class="k">Teléfono</span><span class="v">+54 9 11 2852 4957</span></li>
+          <li><span class="k">Website</span><span class="v">ignacio.antuña.com.ar</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<main id="main">
+  <!-- ======= Skills ======= -->
+  <section class="sec reveal" id="skills">
+    <span class="eyebrow">02 — skills</span>
+    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> skills.sh</div>
+    <div class="window">
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h3>Liderazgo &amp; gestión</h3>
+          <div class="tag-row">
+            <span class="tag">Liderazgo de equipos</span>
+            <span class="tag">ITSM</span>
+            <span class="tag">Planificación estratégica</span>
+            <span class="tag">Colaboración cross-funcional</span>
+            <span class="tag">KPIs &amp; SLAs</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Sistemas operativos</h3>
+          <div class="tag-row">
+            <span class="tag">macOS</span>
+            <span class="tag">Microsoft Windows</span>
+            <span class="tag">Linux (Debian)</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Tecnologías &amp; herramientas</h3>
+          <div class="tag-row">
+            <span class="tag">ServiceNow</span>
+            <span class="tag">Jira</span>
+            <span class="tag">JAMF</span>
+            <span class="tag">Workspace ONE</span>
+            <span class="tag">VMware</span>
+            <span class="tag">Redes</span>
+            <span class="tag">Microsoft Office</span>
+            <span class="tag">AI</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Programación</h3>
+          <div class="tag-row">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">C++</span>
+            <span class="tag">C#</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:22px;">
+        <h3 style="font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; font-weight:500;">Idiomas</h3>
+        <ul class="lang-list">
+          <li><span>Español</span><span class="muted" style="font-family:var(--mono); font-size:12px;">nativo</span></li>
+          <li><span>Inglés</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span></span></li>
+          <li><span>Italiano</span><span class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></li>
+          <li><span>Ruso</span><span class="pips"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<!-- ======= About Section ======= -->
-<section id="about" class="about">
-<div class="container">
-<div class="section-title">
-<h2>Sobre mí</h2>
-<p id="yearR"></p>
-</div>
+  <!-- ======= Experience ======= -->
+  <section class="sec reveal" id="experience">
+    <span class="eyebrow">03 — experience</span>
+    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> experience.log</div>
+    <div class="window">
+      <div class="log">
+        <div class="log-item">
+          <span class="log-date">sep 2022 → presente</span>
+          <div class="log-role">Manager, Helpdesk Level 2 &amp; Mac SME <span class="badge-current">activo</span></div>
+          <span class="log-co">JPMorgan Chase</span>
+          <ul>
+            <li>Lidero un equipo de especialistas que gestiona entornos macOS a nivel empresarial.</li>
+            <li>Implemento soluciones estratégicas para simplificar el soporte y reducir el tiempo de resolución.</li>
+            <li>Coordino esfuerzos multidisciplinarios para acompañar actualizaciones de sistemas y despliegues de hardware.</li>
+            <li>Diseño y mantengo la documentación de los flujos de ITSM.</li>
+            <li>Impulso métricas de desempeño y el cumplimiento de SLAs.</li>
+          </ul>
+        </div>
+        <div class="log-item past">
+          <span class="log-date">2020 → 2022</span>
+          <div class="log-role">Manager</div>
+          <span class="log-co">Despegar</span>
+          <ul>
+            <li>Gestioné un equipo multidisciplinario de soporte técnico y servicios de IT internos.</li>
+            <li>Supervisé el desempeño del equipo, definiendo KPIs y mentoreando a sus integrantes.</li>
+            <li>Lideré la planificación estratégica de actualizaciones de sistemas y mejoras de servicio.</li>
+            <li>Coordiné proyectos junto a RRHH, Finanzas y Producto.</li>
+            <li>Entregué reportes a stakeholders y mejoré los procesos de reporting.</li>
+          </ul>
+        </div>
+        <div class="log-item past">
+          <span class="log-date">2017 → 2020</span>
+          <div class="log-role">Head of IT Department</div>
+          <span class="log-co">Transportes Cantarini S.R.L.</span>
+          <ul>
+            <li>Soporte de IT de punta a punta: infraestructura, redes y equipos de usuarios finales.</li>
+            <li>Implementaciones de sistemas y mantenimiento de equipos críticos.</li>
+            <li>Medidas proactivas que mejoraron el uptime y redujeron la tasa de incidentes.</li>
+          </ul>
+        </div>
+        <div class="log-item past">
+          <span class="log-date">2016 → 2017</span>
+          <div class="log-role">Soporte Ssr.</div>
+          <span class="log-co">Farmacia SAID</span>
+          <ul>
+            <li>Soporte técnico en distintas sucursales y a usuarios VIP.</li>
+            <li>Mantenimiento y configuración de hardware/software.</li>
+          </ul>
+        </div>
+        <div class="log-item past">
+          <span class="log-date">2014 → 2016</span>
+          <div class="log-role">Help Desk / Soporte</div>
+          <span class="log-co">Digitronics</span>
+          <ul>
+            <li>Resolución de tickets multinivel y reparación de hardware.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="edu-note">
+        <span class="log-date">2009 → 2011</span>
+        <div class="log-role" style="font-size:15px;">Bachiller en Economía y Gestión de las Empresas</div>
+        <span class="log-co">Instituto Gaspar Campos, San Miguel, Buenos Aires</span>
+      </div>
+    </div>
+  </section>
 
-<div class="row">
-<div class="col-lg-4" data-aos="fade-right">
-<img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-</div>
-<div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-<h3>Estudiante de programación.</h3>
-<p class="font-italic">
-Empecé a estudiar lo que me gusta tarde, por razones que me excedían seguí en el negocio familiar, pasé por otros trabajos tratando de encontrarme a mi mismo porque no encontraba algo que me gustara realmente hasta que un día, un amigo me mostró lo que
-era la programación; y ahí empecé a investigar y a hacer cursos cortos como hobby.</p>
+  <!-- ======= Testimonials ======= -->
+  <section class="sec reveal" id="testimonials">
+    <span class="eyebrow">04 — reviews</span>
+    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> testimonials.json</div>
+    <div class="window">
+      <div class="quote-grid">
+        <div class="quote">
+          <p>"Trabajar con Ignacio hace que ningún día sea el mismo."</p>
+          <div class="who"><b>Gabriel DeLunardo</b> — FullStack Developer</div>
+        </div>
+        <div class="quote">
+          <p>"Nacho es una persona creativa y muy ocurrente."</p>
+          <div class="who"><b>León Saia</b> — Web Designer &amp; Programmer</div>
+        </div>
+        <div class="quote">
+          <p>"Nacho es de esas personas con las que podés hablar sin parar de todo."</p>
+          <div class="who"><b>Micaela Filandino</b> — Programmer &amp; Professor</div>
+        </div>
+        <div class="quote">
+          <p>"Cuando se le encomienda una tarea, concentra todos sus esfuerzos en resolverla."</p>
+          <div class="who"><b>Marcos Caro</b> — Psychologist</div>
+        </div>
+        <div class="quote">
+          <p>"Con Nacho siempre se aprenden cosas nuevas."</p>
+          <div class="who"><b>Rodrigo Trindade</b> — Mobile Tech Lead</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="row">
-<div class="col-lg-6">
-<ul>
-<li><i class="icofont-rounded-right"></i> <strong>Fecha de nacimiento:</strong> 18/01/1993</li>
-<li><i class="icofont-rounded-right"></i> <strong>Website:</strong> ignacio.antuña.com.ar</li>
-<li><i class="icofont-rounded-right"></i> <strong>Teléfono:</strong> +54 9 11 2852 4957</li>
-<li><i class="icofont-rounded-right"></i> <strong>Ciudad:</strong> Tigre, Buenos Aires, Argentina</li>
-</ul>
-</div>
-<div class="col-lg-6">
-<ul>
-<li><i class="icofont-rounded-right"></i> <strong>Edad:</strong>
-<strong id="day"></strong>
-</li>
-<li><i class="icofont-rounded-right"></i> <strong>Email:</strong> ignacio.antu@gmail.com</li>
-<li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Disponible</li>
-</ul>
-</div>
-</div>
-
-<p>
-Páginas tales como <a href="https://www.codecademy.com" target="_blank">CodeCademy</a>, <a href="https://www.udemy.com" target="_blank">Udemy</a>, <a href="https://www.w3schools.com/" target="_blank">w3schools</a>, y
-<a href="https://www.sololearn.com" target="_blank">SoloLearn</a> me ayudaron muchísimo para aprender por mi cuenta hasta que finalmente pude empezar la carrera en el 2019</p>
-</div>
-</div>
-</div>
-</section>
-<!-- End About Section -->
-
-<!-- ======= Skills Section ======= -->
-<section id="skills" class="skills section-bg">
-<div class="container">
-<div class="section-title">
-<h2>Habilidades</h2>
-<p> En general me especialicé en HTML y CSS pero me encanta aprender nuevos lenguajes tales como C++ y python.</p>
-<p>Me intriga mucho y me facina aprender sobre redes y armado de componentes y computadoras.</p>
-</div>
-
-<div class="row skills-content">
-<div class="col-lg-6" data-aos="fade-up">
-<div class="progress">
-<span class="skill">HTML* <i class="val">100%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">CSS* <i class="val">73%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">JavaScript* <i class="val">28%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">WordPress <i class="val">48%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">SQL* <i class="val">66%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">GNU-Linux (Debian Distros).<i class="val">90%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">Microsoft Windows.<i class="val">95%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">MacOs.<i class="val">85%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">Redes.<i class="val">95%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-</div>
-<!-- End First column -->
-<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-<div class="progress">
-<span class="skill">C++* <i class="val">92%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">Python* <i class="val">20%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">Photoshop <i class="val">55%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">C#* <i class="val">15%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">VMware: Instalacion de VMs<i class="val">100%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">.NET<i class="val">40%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">php<i class="val">43%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">Internet of Things<i class="val">95%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-<div class="progress">
-<span class="skill">Armado de Computadoras<i class="val">100%</i></span>
-<div class="progress-bar-wrap">
-<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-</div>
-</div>
-</div>
-</div>
-</div>
-<p id="aclaracion"> *Porcentaje representado por CodeCademy © </p>
-</section>
-<!-- End Second Column -->
-<!-- End Skills Section -->
-
-<!-- ======= Resume Section ======= -->
-<section id="resume" class="resume">
-<div class="container">
-<div class="section-title">
-<h2>Resumen</h2>
-<p>Soy una persona con capacidad para resolver problemas, en condiciones de alta presión, logrando las metas y objetivos, tengo facilidad de adaptación y una gran experiencia en el trabajo en equipo. Busco dar un paso más en mi carrera
-profesional, para continuar desarrollándome en las áreas que me apasionan de tecnología, infraestructura y desarrollo. Tengo muy buen conocimiento de armado y desarmado de computadoras de escritorio tanto como laptops, desde cambiar
-una RAM hasta armar un gabinete desde cero.</p>
-</div>
-
-<!-- ======= Education Section ======= -->
-<div class="row">
-<div class="col-lg-6" data-aos="fade-up">
-<h3 class="resume-title">Educación</h3>
-<div class="resume-item">
-<h4>Bachiller en economía y gestión de las empresas</h4>
-<h5>2009 - 2011</h5>
-<p><em>Instituto Gaspar Campos, San Miguel, Buenos Aires</em></p>
-<ul>
-<li>Toma de decisiones para planificar, organizar, gestionar y controlar la empresa con el fin de alcanzar sus objetivos.</li>
-<li>Principios organizativos para lograr la eficiendia en el uso de los recursos humanos, materiales, inmateriales y financieros de las empresas.</li>
-</ul>
-</div>
-<!-- ======= Experience Section ======= -->
-</div>
-
-<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-<h3 class="resume-title">Experiencia Profesional</h3>
-<!-- NOTA PARA IGNACIO: revisá esta sección, capaz ya cambiaste de trabajo desde que la escribiste -->
-<div class="resume-item">
-<h4>Help-Desk</h4>
-<h5>2021 - Presente</h5>
-<p><em>Despegar S.A</em></p>
-<ul>
-<li>Resolucion de Tickets nivel 1, 2 y 3.</li>
-<li>Diagnostico y resolución de incidentes.</li>
-<li>Creación y corrección de scripts.</li>
-<li>Automatización de sistemas.</li>
-<li>Creación de Bots.</li>
-</ul>
-</div>
-<div class="resume-item">
-<h4>Sistemas</h4>
-<h5>2019 - 2021</h5>
-<p><em>Transportes Cantarini S.R.L.</em></p>
-<ul>
-<li>Soporte técnico de Hardware y Software a usuarios de la empresa (De manera Local y remota).</li>
-<li>Diagnostico y resolución de incidentes.</li>
-<li>Soporte y monitoreo de impresoras / servidores / APs / Swtiches.</li>
-<li>Configuraciones y mantenimientos de hardware.</li>
-<li>Participación de forma activa conjunto al equipo de infraestructura con el fin de prevenir potenciales incidentes y detectar oportunidades de mejora.</li>
-</ul>
-</div>
-<div class="resume-item">
-<h4>Diseñador Web Junior</h4>
-<h5>2019 - 2020</h5>
-<p><em>Freelance</em></p>
-<ul>
-<li>En conjunto a diversos compañeros hicimos algunas páginas web para unas empresas de Estados Unidos, y Argentina.</li>
-<li>Con ellos aprendí muchísimo del diseño web y cómo montar páginas.</li>
-</ul>
-</div>
-<div class="resume-item">
-<h4>Soporte Ssr.</h4>
-<h5>2017 - 2019</h5>
-<p><em>Farmacia SAID.</em></p>
-<ul>
-<li>Responsable de diferentes sucursales todo lo que Microinformática respecta.</li>
-<li>Mantenimiento de los equipos, impresoras y laptops.</li>
-<li>Configuración de los equipos para trabajar con el servidor en común.</li>
-<li>Soporte Técnico on site. VIP.</li>
-</ul>
-</div>
-<div class="resume-item">
-<h4>Help-Desk / Soporte.</h4>
-<h5>2015 - 2017</h5>
-<p><em>Digitronics.</em></p>
-<ul>
-<li>Resolución de tickets nivel 1, 2.</li>
-<li>Mantenimiento de los equipos.</li>
-<li>Armado de computadoras, reparación de las mismas, laptops e impresoras/escaners.</li>
-<li>Configuración y entrega de equipos con diferentes sistemas operativos (Microsoft Windows, GNU Linux y MacOs).</li>
-<li>Soporte técnico al personal de la empresa (Local, remoto y telefónico).</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- End Resume Section -->
-
-<!-- ======= Portfolio Section (comentado: los links viejos a .ga ya no existen) ======= -->
-<!--
-<section id="portfolio" class="portfolio section-bg">
-<div class="container">
-<div class="section-title">
-<h2>Portfolio</h2>
-<p>Acá dejo mi portfolio personal, en los cuales únicamente participe yo. Hasta ahora son proyectos sin finalizar.</p>
-</div>
-<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-<div class="col-lg-4 col-md-6 portfolio-item">
-<a href="#" target="_blank"> <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></a>
-</div>
-<div class="col-lg-4 col-md-6 portfolio-item">
-<a href="#" target="_blank"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></a>
-</div>
-</div>
-</div>
-</section>
--->
-<!-- End Portfolio Section -->
-
-<!-- ======= Testimonials Section ======= -->
-<section id="testimonials" class="testimonials section-bg">
-<div class="container">
-<div class="section-title">
-<h2>Testimonios</h2>
-<p> Se me ocurrió hacer una pequeña lista de personas que puedan aportar algo a mi desempeño tanto como programador como persona.</p>
-</div>
-
-<div class="owl-carousel testimonials-carousel">
-<div class="testimonial-item" data-aos="fade-up">
-<p>
-<i class="bx bxs-quote-alt-left quote-icon-left"></i>Trabajar con Ignacio hace que ningún día sea el mismo.
-<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-</p>
-<img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-<h3>Gabriel DeLunardo</h3>
-<h4>FullStack Developer</h4>
-</div>
-
-<div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-<p>
-<i class="bx bxs-quote-alt-left quote-icon-left"></i> Nacho es una persona creativa y muy ocurrente.
-<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-</p>
-<img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-<h3>León Saia</h3>
-<h4>Web Designer & Programmer</h4>
-</div>
-
-<div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-<p>
-<i class="bx bxs-quote-alt-left quote-icon-left"></i> Nacho es de esas personas con las que podes hablar sin parar de todo.
-<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-</p>
-<img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-<h3>Micaela Filandino</h3>
-<h4>Programmer & Professor</h4>
-</div>
-
-<div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-<p>
-<i class="bx bxs-quote-alt-left quote-icon-left"></i> Cuando se le encomienda una tarea, concentra todos sus esfuerzos en resolverla.
-<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-</p>
-<img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-<h3>Marcos Caro</h3>
-<h4>Psychologist.</h4>
-</div>
-
-<div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-<p>
-<i class="bx bxs-quote-alt-left quote-icon-left"></i> Con Nacho siempre se aprenden cosas nuevas.
-<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-</p>
-<img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-<h3>Rodrigo Trindade</h3>
-<h4>Mobile Tech Lead, Mobile FrontEnd & Android Developer</h4>
-</div>
-</div>
-</div>
-</section>
-<!-- End Testimonials Section -->
-
-<!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
-<div class="container">
-<div class="section-title">
-<h2>Contacto</h2>
-<p> En el caso que me quieran enviar un mensaje via e-mail lo pueden hacer acá abajo, también dejo una zona aproximada a mi vivienda pero tengo que aclarar que tengo vehículo propio por lo cual la movilidad no sería nunca un problema.</p>
-</div>
-
-<div class="row" data-aos="fade-in">
-<div class="col-lg-5 d-flex align-items-stretch">
-<div class="info">
-<div class="address">
-<i class="icofont-google-map"></i>
-<h4>Ubicación</h4>
-<p>El Talar, Buenos Aires, Argentina</p>
-</div>
-<div class="email">
-<i class="icofont-envelope"></i>
-<h4>Email:</h4>
-<a href="mailto:ignacio.antu@gmail.com">
-<p>ignacio.antu@gmail.com</p>
-</a>
-</div>
-<div class="phone">
-<i class="icofont-phone"></i>
-<h4>contacto:</h4>
-<a href="https://api.whatsapp.com/send?phone=541128524957&text=%20">
-<p>+54 9 11 2852 4957</p>
-</a>
-</div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26313.785899179235!2d-58.67158321426154!3d-34.47186072179097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca3630ce51b53%3A0x6cb44ad91aa47d6c!2sEl%20Talar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1600380916272!5m2!1ses!2sar"
-frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-</div>
-</div>
-
-<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-<!--
-  Formulario via Web3Forms (https://web3forms.com): es gratis, no necesita backend
-  ni contraseñas en el cliente. Pasos para activarlo:
-  1) Entrá a https://web3forms.com/ y poné tu email (ignacio.antu@gmail.com).
-  2) Te va a llegar un "Access Key" por mail.
-  3) Reemplazá TU_ACCESS_KEY_AQUI más abajo por esa clave.
-  Listo, los mensajes te van a llegar directo a tu correo.
--->
-<form method="POST" role="form" class="email-form" action="https://api.web3forms.com/submit">
-<input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
-<input type="hidden" name="subject" value="Nuevo mensaje desde ignacio.antuña.com.ar">
-<input type="checkbox" name="botcheck" class="d-none" style="display:none">
-
-<div class="row">
-<div class="form-group col-md-6">
-<label for="name">Nombre</label>
-<input type="text" name="name" class="form-control" id="name" required minlength="4" />
-</div>
-<div class="form-group col-md-6">
-<label for="email">Email</label>
-<input type="email" class="form-control" name="email" id="email" required />
-</div>
-</div>
-<div class="form-group">
-<label for="subject_user">Motivo</label>
-<input type="text" class="form-control" name="motivo" id="subject_user" required minlength="8" />
-</div>
-<div class="form-group">
-<label for="comments">Mensaje</label>
-<textarea class="form-control" name="message" id="comments" rows="13" required></textarea>
-</div>
-<div class="mb-3"></div>
-<div class="text-center"><button type="submit" class="btn">Enviar mensaje</button></div>
-</form>
-</div>
-</div>
-</div>
-</section>
-<!-- End Contact Section -->
+  <!-- ======= Contact ======= -->
+  <section class="sec reveal" id="contact">
+    <span class="eyebrow">05 — contact</span>
+    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> contact.sh</div>
+    <div class="window">
+      <div class="contact-grid">
+        <div>
+          <p class="muted" style="font-size:14px;">El Talar, Buenos Aires. Tengo vehículo propio, la movilidad no es problema.</p>
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26313.785899179235!2d-58.67158321426154!3d-34.47186072179097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca3630ce51b53%3A0x6cb44ad91aa47d6c!2sEl%20Talar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1600380916272!5m2!1ses!2sar"
+              loading="lazy" allowfullscreen title="Ubicación aproximada"></iframe>
+          </div>
+        </div>
+        <div>
+          <div class="ok-banner" id="okBanner">✓ Mensaje enviado. Gracias, te respondo a la brevedad.</div>
+          <form method="POST" action="https://formsubmit.co/ignacio.antu@gmail.com" id="contactForm">
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde ignacio.antuña.com.ar">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://ignacio.xn--antua-rta.com.ar/index.html?ok=1">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input type="text" name="name" id="name" required minlength="2">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required>
+            </div>
+            <div class="field">
+              <label for="motivo">Motivo</label>
+              <input type="text" name="motivo" id="motivo" required minlength="3">
+            </div>
+            <div class="field">
+              <label for="mensaje">Mensaje</label>
+              <textarea name="mensaje" id="mensaje" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main>
-<!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
-<div class="container">
-</div>
+<footer>
+  <p>$ uptime — desde 2019 escribiendo HTML para entender mejor mi propio trabajo.</p>
 </footer>
-<!-- End Footer -->
 
-<a href="#header" class="back-to-top"><i class="icofont-simple-up"></i></a>
+<script>
+  // edad calculada en vivo, sin depender de un archivo aparte
+  (function(){
+    var birth = new Date(1993,0,18);
+    var now = new Date();
+    var age = now.getFullYear() - birth.getFullYear();
+    if (now.getMonth() < birth.getMonth() || (now.getMonth()===birth.getMonth() && now.getDate()<birth.getDate())) age--;
+    var el = document.getElementById('age');
+    if (el) el.textContent = age + ' años';
+  })();
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/counterup/counterup.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/typed.js/typed.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
+  // banner de "enviado" si venimos de un POST exitoso del formulario
+  if (location.search.indexOf('ok=1') !== -1){
+    var b = document.getElementById('okBanner');
+    if (b) b.classList.add('show');
+  }
 
-<!-- Buy me a coffee Widget: el "data-id" decía "NatGeo" (quedó de otra cuenta del template).
-     Si tenés tu propia página en buymeacoffee.com, poné tu usuario en data-id y descomentá esto. -->
-<!--
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="TU_USUARIO_AQUI" data-description="Support me on Buy me a coffee!" data-message="Gracias por pasar por aca y si queres podes invitarme un cafe!"
-data-color="#149ddd" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
--->
+  // mini animación de terminal en el hero (respeta reduced-motion)
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var lines = [
+      'IT Manager — Mac SME @ JPMorgan Chase',
+      'ex-soporte, ex-armador de PCs, siempre IT',
+      'Tigre, Buenos Aires, Argentina'
+    ];
+    var out = document.getElementById('termOut');
+    if (!out) return;
+    var i = 0;
+    function cycle(){
+      out.innerHTML = lines[i] + '<span class="caret"></span>';
+      i = (i+1) % lines.length;
+      setTimeout(cycle, 3200);
+    }
+    setTimeout(cycle, 3200);
+  })();
 
-<!-- Template Main JS File -->
+  // scroll reveal simple
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)){
+      items.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    items.forEach(function(el){ obs.observe(el); });
+  })();
+</script>
+
 </body>
 </html>
