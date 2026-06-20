@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 — página no encontrada</title>
+<title>404</title>
 <link rel="icon" href="assets/img/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -12,12 +12,9 @@
     --paper:#e8eaed; --muted:#8b93a1; --green:#3dd68c; --amber:#f2a93b; --red:#f2545b;
   }
   *{box-sizing:border-box;}
-  body{
-    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-    background:var(--ink); color:var(--paper); font-family:'IBM Plex Mono', monospace; padding:20px;
-  }
+  body{margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--ink); color:var(--paper); font-family:'IBM Plex Mono', monospace; padding:20px;}
   .window{max-width:440px; width:100%; border:1px solid var(--line); border-radius:12px; overflow:hidden;}
-  .winhead{display:flex; align-items:center; gap:10px; padding:10px 16px; background:var(--panel-2); font-size:12px; color:var(--muted);}
+  .winhead{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 16px; background:var(--panel-2); font-size:12px; color:var(--muted);}
   .traffic{display:flex; gap:7px;}
   .traffic span{width:11px; height:11px; border-radius:50%; display:inline-block;}
   .traffic .r{background:var(--red);} .traffic .a{background:var(--amber);} .traffic .g{background:var(--green);}
@@ -26,22 +23,46 @@
   p{color:var(--muted); font-size:14px; margin:0 0 18px; line-height:1.6;}
   .ln{margin-bottom:4px;}
   .prompt{color:var(--green);}
-  a.btn{
-    display:inline-block; background:var(--green); color:var(--ink); text-decoration:none;
-    font-weight:600; border-radius:8px; padding:10px 16px; font-size:13px;
-  }
+  a.btn{display:inline-block; background:var(--green); color:var(--ink); text-decoration:none; font-weight:600; border-radius:8px; padding:10px 16px; font-size:13px;}
+  .langtoggle button{background:transparent; border:1px solid var(--line); color:var(--muted); padding:3px 7px; border-radius:5px; cursor:pointer; font-family:inherit; font-size:11px;}
+  .langtoggle button.active{background:var(--green); color:var(--ink); border-color:var(--green);}
 </style>
 </head>
 <body>
   <div class="window">
-    <div class="winhead"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> 404.log</div>
+    <div class="winhead">
+      <div style="display:flex;align-items:center;gap:10px;"><div class="traffic"><span class="r"></span><span class="a"></span><span class="g"></span></div> 404.log</div>
+      <div class="langtoggle"><button onclick="setLang('es')" id="btnEs">ES</button> <button onclick="setLang('en')" id="btnEn">EN</button></div>
+    </div>
     <div class="body">
-      <p class="ln"><span class="prompt">$</span> cd esa-página-que-buscabas</p>
-      <p class="ln">bash: no existe ese archivo o directorio</p>
+      <p class="ln"><span class="prompt">$</span> <span id="cmd">cd esa-página-que-buscabas</span></p>
+      <p class="ln" id="errLine">bash: no existe ese archivo o directorio</p>
       <h1 class="code">404</h1>
-      <p>La página que buscás no está (o se mudó). Volvé al inicio y probá de nuevo.</p>
-      <a class="btn" href="index.html">← Volver al inicio</a>
+      <p id="msg">La página que buscás no está (o se mudó). Volvé al inicio y probá de nuevo.</p>
+      <a class="btn" href="index.html" id="btnHome">← Volver al inicio</a>
     </div>
   </div>
+<script>
+  var T = {
+    es: {cmd:"cd esa-página-que-buscabas", err:"bash: no existe ese archivo o directorio", msg:"La página que buscás no está (o se mudó). Volvé al inicio y probá de nuevo.", btn:"← Volver al inicio"},
+    en: {cmd:"cd that-page-you-were-looking-for", err:"bash: no such file or directory", msg:"That page isn't here (or it moved). Head back home and try again.", btn:"← Back to home"}
+  };
+  function setLang(l){
+    var t = T[l] || T.es;
+    document.getElementById('cmd').textContent = t.cmd;
+    document.getElementById('errLine').textContent = t.err;
+    document.getElementById('msg').textContent = t.msg;
+    document.getElementById('btnHome').textContent = t.btn;
+    document.getElementById('htmlRoot').setAttribute('lang', l);
+    document.getElementById('btnEs').classList.toggle('active', l==='es');
+    document.getElementById('btnEn').classList.toggle('active', l==='en');
+    try{ localStorage.setItem('lang', l); }catch(e){}
+  }
+  (function(){
+    var saved=null; try{ saved=localStorage.getItem('lang'); }catch(e){}
+    var lang = saved || (((navigator.language||'es').toLowerCase().indexOf('es')===0) ? 'es' : 'en');
+    setLang(lang);
+  })();
+</script>
 </body>
 </html>
